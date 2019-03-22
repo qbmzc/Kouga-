@@ -1,10 +1,13 @@
 package com.congco.kouga.common.param;
+
 import com.google.common.base.Converter;
 import com.congco.kouga.entity.UserDO;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 import org.springframework.beans.BeanUtils;
+
+import javax.validation.constraints.NotNull;
 
 /**
  * created on 2019/3/22 14:31
@@ -16,21 +19,20 @@ import org.springframework.beans.BeanUtils;
 @Getter
 public class UserDTO {
 
+    @NotNull
     private String name;
-
+    @NotNull
     private Integer age;
 
 
-    public UserDO convertToUser(){
+    public UserDO convertToUser() {
         UserDTOConvert userDTOConvert = new UserDTOConvert();
-        UserDO convert = userDTOConvert.convert(this);
-        return convert;
+        return userDTOConvert.convert(this);
     }
 
-    public UserDTO convertFor(UserDO user){
+    public UserDTO convertFor(UserDO user) {
         UserDTOConvert userDTOConvert = new UserDTOConvert();
-        UserDTO convert = userDTOConvert.reverse().convert(user);
-        return convert;
+        return userDTOConvert.reverse().convert(user);
     }
 
     /**
@@ -40,14 +42,14 @@ public class UserDTO {
         @Override
         protected UserDO doForward(UserDTO userDTO) {
             UserDO user = new UserDO();
-            BeanUtils.copyProperties(userDTO,user);
+            BeanUtils.copyProperties(userDTO, user);
             return user;
         }
 
         @Override
         protected UserDTO doBackward(UserDO user) {
             UserDTO userDTO = new UserDTO();
-            BeanUtils.copyProperties(user,userDTO);
+            BeanUtils.copyProperties(user, userDTO);
             return userDTO;
         }
     }
