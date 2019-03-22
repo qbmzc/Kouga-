@@ -1,7 +1,7 @@
-package com.congco.kouga.common.param;
+package com.congco.kouga.common;
 
-import com.google.common.base.Converter;
 import com.congco.kouga.entity.UserDO;
+import com.google.common.base.Converter;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;

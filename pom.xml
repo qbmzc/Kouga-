@@ -72,7 +72,13 @@
             <version>20.0</version>
         </dependency>
     </dependencies>
-
+    <!-- 部署nexus配置 -->
+    <distributionManagement>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <url>http://gitlab.congco.com:8081/repository/maven-snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
     <build>
         <plugins>
             <plugin>

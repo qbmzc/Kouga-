@@ -1,6 +1,6 @@
 package com.congco.kouga.controller;
 
-import com.congco.kouga.common.param.UserDTO;
+import com.congco.kouga.common.UserDTO;
 import com.congco.kouga.entity.UserDO;
 import com.congco.kouga.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;

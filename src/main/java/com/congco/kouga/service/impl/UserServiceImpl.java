@@ -1,6 +1,5 @@
 package com.congco.kouga.service.impl;
 
-import com.congco.kouga.common.param.UserDTO;
 import com.congco.kouga.dao.UserRepository;
 import com.congco.kouga.entity.UserDO;
 import com.congco.kouga.service.UserService;
@@ -21,6 +20,7 @@ import java.util.Optional;
 public class UserServiceImpl implements UserService {
 
     private UserRepository userRepository;
+
     @Autowired
     public UserServiceImpl(UserRepository userRepository) {
         this.userRepository = userRepository;
@@ -32,10 +32,19 @@ public class UserServiceImpl implements UserService {
         UserDO userDO = optionalUserDO.get();
         return userDO;
     }
+//TODO 待实现
 
+    /**
+     * @param userDO 实体类对象
+     * @return
+     */
     @Override
-    public Integer save(UserDTO userDTO) {
-        return null;
+    public Integer save(UserDO userDO) {
+        UserDO save = this.userRepository.save(userDO);
+        if (null==save){
+            return 0;
+        }
+        return 1;
     }
 
     @Override
@@ -44,7 +53,9 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public List<UserDTO> queryAll(Integer pageNum, Integer pageSize) {
+    public List<UserDO> queryAll(Integer pageNum, Integer pageSize) {
         return null;
     }
+
+
 }

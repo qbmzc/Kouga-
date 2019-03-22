@@ -1,6 +1,5 @@
 package com.congco.kouga.service;
 
-import com.congco.kouga.common.param.UserDTO;
 import com.congco.kouga.entity.UserDO;
 
 import java.util.List;
