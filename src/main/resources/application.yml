@@ -1,0 +1,21 @@
+server:
+  port: 9090
+  servlet:
+    context-path: /rest
+spring:
+  application:
+    name: kouga
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/data?useSSL=false&serverTimezone=Asia/Shanghai
+    username: root
+    password: zc0417
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+  jpa:
+    hibernate:
+      ddl-auto: update
+    database: mysql
+    show-sql: true
+logging:
+  level:
+    com.congco: debug
